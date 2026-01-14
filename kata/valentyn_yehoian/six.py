@@ -6,4 +6,4 @@ def find_nb(m):
         sum += i ** 3
         if sum == m:
             return i
-    return -1
+    return -1 

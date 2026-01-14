@@ -23,6 +23,13 @@ extend-exclude = '''
 '''
 
 [tool.isort]
+skip = [
+    ".git",
+    ".venv",
+    "venv",
+    ".env",
+    "env",
+]
 profile = "black"
 line_length = 120
 multi_line_output = 3

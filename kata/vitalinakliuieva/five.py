@@ -1,3 +1,5 @@
+import math
+
 def gap(g, m, n):
     """"Gap in Primes exercise"""
     last_prime = None
@@ -25,10 +27,10 @@ def zeros(n):
 def perimeter(n):
     """Perimeter of squares in a rectangle"""
     previous = 1
-    next = 1
+    second_var = 1
     total = 1
     for _ in range(n):
-        previous, next = next, previous + next
+        previous, second_var = second_var, previous + second_var
         total += previous
     return 4 * total
 
@@ -44,7 +46,7 @@ def smallest(n):
 
     for i in range(len(num)):
         digit = num[i]
-        rest = rest = num[:i] + num[i + 1:]
+        rest = num[:i] + num[i + 1:]
 
         for j in range(len(rest) + 1):
             candidate = int(rest[:j] + digit + rest[j:])

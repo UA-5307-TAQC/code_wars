@@ -1,9 +1,9 @@
+"""Solutions for Codewars kata (7 kyu)."""
 import math
 
-
-def new_avg(arr, new_avg):
+def new_avg(arr, new_num):
     """Looking for a benefactor exercise"""
-    needed = new_avg * (len(arr) + 1) - sum(arr)
+    needed = new_num * (len(arr) + 1) - sum(arr)
     needed = math.ceil(needed)
     if needed <= 0:
         raise ValueError("Expected donation must be a positive number")

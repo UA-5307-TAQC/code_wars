@@ -1,5 +1,6 @@
-#Build a pile of Cubes exercise
+"""Solutions for Codewars kata (6 kyu)."""
 def find_nb(m):
+    """Build a pile of Cubes exercise"""
     n = 0
     total = 0
 
@@ -9,15 +10,15 @@ def find_nb(m):
 
     return n if total == m else -1
 
-#Easy Balance Checking exercise
-import re
+
 
 def balance(book):
+    """Easy Balance Checking exercise"""
     lines = book.splitlines()
     lines = [re.sub(r'[^a-zA-Z0-9. ]+', '', line) for line in lines if line.strip()]
 
-    balance = float(lines[0])
-    report_lines = [f"Original Balance: {balance:.2f}"]
+    balance_num = float(lines[0])
+    report_lines = [f"Original Balance: {balance_num:.2f}"]
 
     total_expense = 0.0
     count_expense = 0
@@ -28,11 +29,11 @@ def balance(book):
         category = " ".join(parts[1:-1])
         amount = float(parts[-1])
 
-        balance -= amount
+        balance_num -= amount
         total_expense += amount
         count_expense += 1
 
-        report_lines.append(f"{check_num} {category} {amount:.2f} Balance {balance:.2f}")
+        report_lines.append(f"{check_num} {category} {amount:.2f} Balance {balance_num:.2f}")
 
     average_expense = total_expense / count_expense if count_expense else 0
     report_lines.append(f"Total expense  {total_expense:.2f}")
@@ -40,18 +41,23 @@ def balance(book):
 
     return "\r\n".join(report_lines)
 
-#Floating-point Approximation  exercise
+
 import math
 
+
 def f(x):
+    """Floating-point Approximation  exercise"""
     return x / (math.sqrt(1 + x) + 1)
 
-#Rainfall exercise
+
+
 def mean(town, s):
+    """Rainfall exercise"""
     values = get_values(town, s)
     if values is None:
         return -1
     return sum(values) / len(values)
+
 
 def variance(town, s):
     values = get_values(town, s)
@@ -61,14 +67,18 @@ def variance(town, s):
     avg = sum(values) / len(values)
     return sum((x - avg) ** 2 for x in values) / len(values)
 
+
 def get_values(town, s):
     for line in s.split("\n"):
         if line.startswith(town + ":"):
             data = line.split(":")[1]
             return [float(x.split()[1]) for x in data.split(",")]
+    return None
 
-#Ranking NBA teams exercise
+
+
 def nba_cup(result_sheet, to_find):
+    """Ranking NBA teams exercise"""
     if not to_find:
         return ""
 
@@ -87,8 +97,8 @@ def nba_cup(result_sheet, to_find):
                 try:
                     float(p)
                     if not p.isdigit():
-                        return f"Error(float number):{game}"
-                except:
+                        return t"Error(float number):{game}"
+                except ValueError:
                     pass
 
         score_indexes = [i for i, p in enumerate(parts) if p.isdigit()]
@@ -110,18 +120,22 @@ def nba_cup(result_sheet, to_find):
             scored += score1
             conceded += score2
             if score1 > score2:
-                wins += 1; points += 3
+                wins += 1
+                points += 3
             elif score1 == score2:
-                draws += 1; points += 1
+                draws += 1
+                points += 1
             else:
                 losses += 1
         else:
             scored += score2
             conceded += score1
             if score2 > score1:
-                wins += 1; points += 3
+                wins += 1
+                points += 3
             elif score1 == score2:
-                draws += 1; points += 1
+                draws += 1
+                points += 1
             else:
                 losses += 1
 
@@ -132,11 +146,12 @@ def nba_cup(result_sheet, to_find):
         f"{to_find}:W={wins};D={draws};L={losses};"
         f"Scored={scored};Conceded={conceded};Points={points}")
 
-#Help the bookseller ! exercise
+
+
 import re
 
-
 def stock_list(stocklist, categories):
+    """Help the bookseller ! exercise"""
     total = 0
     result = []
     if not stocklist:

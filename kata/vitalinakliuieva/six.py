@@ -1,4 +1,8 @@
 """Solutions for Codewars kata (6 kyu)."""
+
+import re
+import math
+
 def find_nb(m):
     """Build a pile of Cubes exercise"""
     n = 0
@@ -42,8 +46,6 @@ def balance(book):
     return "\r\n".join(report_lines)
 
 
-import math
-
 
 def f(x):
     """Floating-point Approximation  exercise"""
@@ -60,6 +62,7 @@ def mean(town, s):
 
 
 def variance(town, s):
+    """Rainfall exercise"""
     values = get_values(town, s)
     if values is None:
         return -1
@@ -69,6 +72,7 @@ def variance(town, s):
 
 
 def get_values(town, s):
+    """Get values for Rainfall exercise"""
     for line in s.split("\n"):
         if line.startswith(town + ":"):
             data = line.split(":")[1]
@@ -95,9 +99,8 @@ def nba_cup(result_sheet, to_find):
         for p in parts:
             if "." in p:
                 try:
-                    float(p)
                     if not p.isdigit():
-                        return t"Error(float number):{game}"
+                        return f"Error(float number):{game}"
                 except ValueError:
                     pass
 
@@ -147,8 +150,6 @@ def nba_cup(result_sheet, to_find):
         f"Scored={scored};Conceded={conceded};Points={points}")
 
 
-
-import re
 
 def stock_list(stocklist, categories):
     """Help the bookseller ! exercise"""

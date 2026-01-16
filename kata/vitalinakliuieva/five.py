@@ -1,7 +1,7 @@
 """Solutions for Codewars kata (5 kyu)."""
 import math
 def gap(g, m, n):
-    """"Gap in Primes exercise"""
+    """Gap in Primes exercise"""
     last_prime = None
     for num in range(m, n + 1):
         if is_prime(num):

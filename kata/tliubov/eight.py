@@ -38,7 +38,7 @@ def square_or_square_root(arr):
 
 def count_positives_sum_negatives(arr):
     """Count of positives / sum of negatives."""
-    if arr:
+    if not arr:
         return []
 
     count = 0
@@ -62,12 +62,7 @@ def am_i_wilson(n):
     """Wilson primes."""
     if n < 2:
         return False
-
-    numerator = factorial(n - 1) + 1
-    result = numerator / n**2
-    if floor(result) == result:
-        return True
-    return False
+    return (factorial(n - 1) + 1) % (n**2) == 0
 
 
 def two_decimal_places(n):

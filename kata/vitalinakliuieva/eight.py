@@ -4,7 +4,7 @@ import math
 
 def litres(time):
     """Keep Hydrated! exercise"""
-    litres_count = math.floor(time/2)
+    litres_count = math.floor(time / 2)
     return litres_count
 
 def get_volume_of_cuboid(length, width, height):
@@ -14,7 +14,7 @@ def get_volume_of_cuboid(length, width, height):
 
 def converter(mpg):
     """Miles per gallon to kilometers per liter exercise"""
-    klp = round((mpg * 1.609344)/4.54609188, 2)
+    klp = round((mpg * 1.609344) / 4.54609188, 2)
     return klp
 
 def square_or_square_root(arr):
@@ -34,9 +34,9 @@ def count_positives_sum_negatives(arr):
     positive = 0
     if arr:
         for num in arr:
-            if num>0 :
+            if num > 0 :
                 positive += 1
-            elif num<0:
+            elif num < 0:
                 negative += num
         result.append(positive)
         result.append(negative)
@@ -62,7 +62,7 @@ def divisible_by(numbers, divisor):
     """Find numbers which are divisible by given number exercise"""
     result = []
     for num in numbers:
-        if num%divisor == 0:
+        if num % divisor == 0:
             result.append(num)
     return result
 

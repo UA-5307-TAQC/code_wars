@@ -21,9 +21,9 @@ def series_sum(n):
         return "1.00"
 
     result = 1
-    determinator = 1
+    denominator = 1
     for _ in range(1, n):
-        determinator += 3
-        result += 1 / determinator
+        denominator += 3
+        result += 1 / denominator
 
     return format(result, ".2f")

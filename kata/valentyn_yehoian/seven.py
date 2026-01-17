@@ -16,10 +16,8 @@ def series_sum(n):
     if n == 0:
         return "0.00"
     result = 1
-    state = 0
-    i = 1
-    while i < n:
-        i += 1
-        result += 1 / (4 + state)
-        state += 3
+    denominator_offset = 0
+    for _ in range(1, n):
+        result += 1 / (4 + denominator_offset)
+        denominator_offset += 3
     return f"{result:.2f}"

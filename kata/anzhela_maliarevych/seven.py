@@ -26,4 +26,4 @@ def series_sum(n):
         znamenyk = 1 + (i - 1) * 3
         total += 1 / znamenyk
 
-    return "{:.2f}".format(total)
+    return f"{total:.2f}"

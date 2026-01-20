@@ -5,7 +5,7 @@ import math
 
 def new_avg(arr, newavg):
     """Looking for a benefactor."""
-    sum_of_donations = sum(i for i in arr)
+    sum_of_donations = sum(arr)
     next_donation = newavg * (len(arr) + 1) - sum_of_donations
     if next_donation <= 0:
         raise ValueError

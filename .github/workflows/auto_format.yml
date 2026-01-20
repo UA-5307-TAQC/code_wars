@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   format:
-    name: Auto-format (black + isort)
+    name: Auto-format (black + isort + pylint)
     runs-on: ubuntu-latest
 
     steps:
@@ -40,3 +40,7 @@ jobs:
       - name: Run black
         run: |
           black .
+
+      - name: Run pylint
+        run: |
+          pylint $(git ls-files '*.py') --fail-under=9.5

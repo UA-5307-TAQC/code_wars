@@ -59,7 +59,6 @@ def get_data(town, s):
     lines_arr = s.split("\n")
     line = [line for line in lines_arr if re.match(rf"{town}:", line)]
 
-    print(line)
     if len(line) == 0:
         return -1
 

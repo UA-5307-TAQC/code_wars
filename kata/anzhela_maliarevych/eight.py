@@ -1,7 +1,5 @@
 """8kyu tasks"""
 
-import re
-from math import sqrt
 import math
 
 
@@ -25,7 +23,7 @@ def converter(mpg):
 def square_or_square_root(arr):
     """To square(root) or not to square(root)."""
     result = []
-    
+
     for x in arr:
         root = math.sqrt(x)
         if root.is_integer():
@@ -69,7 +67,7 @@ def two_decimal_places(n):
 def divisible_by(numbers, divisor):
     """Find numbers which are divisible by given number."""
     result = []
-    
+
     for n in numbers:
         if n % divisor == 0:
             result.append(n)

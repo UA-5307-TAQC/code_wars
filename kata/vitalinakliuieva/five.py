@@ -1,5 +1,8 @@
 """Solutions for Codewars kata (5 kyu)."""
+
 import math
+
+
 def gap(g, m, n):
     """Gap in Primes exercise"""
     last_prime = None
@@ -12,7 +15,8 @@ def gap(g, m, n):
 
 
 def is_prime(n):
-    return n > 1 and all(n % i != 0 for i in range(2, int(n ** 0.5) + 1))
+    """Check if number is prime."""
+    return n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))
 
 
 def zeros(n):
@@ -34,9 +38,10 @@ def perimeter(n):
         total += previous
     return 4 * total
 
+
 def solve(m):
     """Which x for that sum?"""
-    return (2*m + 1 - math.sqrt(4*m + 1)) / (2*m)
+    return (2 * m + 1 - math.sqrt(4 * m + 1)) / (2 * m)
 
 
 def smallest(n):
@@ -44,9 +49,9 @@ def smallest(n):
     num = str(n)
     best = (n, 0, 0)
 
-    for i in range(len(num)):
+    for i, _ in range(len(num)):
         digit = num[i]
-        rest = num[:i] + num[i + 1:]
+        rest = num[:i] + num[i + 1 :]
 
         for j in range(len(rest) + 1):
             candidate = int(rest[:j] + digit + rest[j:])

@@ -1,5 +1,7 @@
 """Solutions for Codewars kata (7 kyu)."""
+
 import math
+
 
 def new_avg(arr, new_num):
     """Looking for a benefactor exercise"""
@@ -23,4 +25,3 @@ def series_sum(n):
         denominator += 3
 
     return f"{total:.2f}"
-

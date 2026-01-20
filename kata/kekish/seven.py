@@ -25,7 +25,7 @@ def new_avg(arr, new_average):
     donation = new_average * (len(arr) + 1) - current_sum
 
     if donation <= 0:
-        raise Exception("")
+        raise ValueError
 
     return math.ceil(donation)
 

@@ -1,7 +1,8 @@
 """Solutions for Codewars kata (6 kyu)."""
 
-import re
 import math
+import re
+
 
 def find_nb(m):
     """Build a pile of Cubes exercise"""
@@ -10,16 +11,15 @@ def find_nb(m):
 
     while total < m:
         n += 1
-        total += n ** 3
+        total += n**3
 
     return n if total == m else -1
-
 
 
 def balance(book):
     """Easy Balance Checking exercise"""
     lines = book.splitlines()
-    lines = [re.sub(r'[^a-zA-Z0-9. ]+', '', line) for line in lines if line.strip()]
+    lines = [re.sub(r"[^a-zA-Z0-9. ]+", "", line) for line in lines if line.strip()]
 
     balance_num = float(lines[0])
     report_lines = [f"Original Balance: {balance_num:.2f}"]
@@ -46,11 +46,9 @@ def balance(book):
     return "\r\n".join(report_lines)
 
 
-
 def f(x):
     """Floating-point Approximation  exercise"""
     return x / (math.sqrt(1 + x) + 1)
-
 
 
 def mean(town, s):
@@ -80,8 +78,7 @@ def get_values(town, s):
     return None
 
 
-
-def nba_cup(result_sheet, to_find):
+def nba_cup(result_sheet, to_find):  # pylint: disable=R0914, R0912
     """Ranking NBA teams exercise"""
     if not to_find:
         return ""
@@ -112,7 +109,7 @@ def nba_cup(result_sheet, to_find):
         score1, score2 = int(parts[i1]), int(parts[i2])
 
         team1 = " ".join(parts[:i1])
-        team2 = " ".join(parts[i1 + 1:i2])
+        team2 = " ".join(parts[i1 + 1 : i2])
 
         if to_find not in (team1, team2):
             continue
@@ -145,10 +142,7 @@ def nba_cup(result_sheet, to_find):
     if not found:
         return f"{to_find}:This team didn't play!"
 
-    return (
-        f"{to_find}:W={wins};D={draws};L={losses};"
-        f"Scored={scored};Conceded={conceded};Points={points}")
-
+    return f"{to_find}:W={wins};D={draws};L={losses};" f"Scored={scored};Conceded={conceded};Points={points}"
 
 
 def stock_list(stocklist, categories):

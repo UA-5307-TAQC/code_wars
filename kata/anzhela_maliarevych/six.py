@@ -1,4 +1,4 @@
-"""6kyu tasks."""
+"""6kyu tasks solution."""
 
 import re
 from math import sqrt
@@ -11,12 +11,11 @@ def find_nb(m):
 
     while total < m:
         n += 1
-        total += n ** 3
+        total += n**3
 
     if total == m:
         return n
-    else:
-        return -1
+    return -1
 
 
 def balance(book):
@@ -44,9 +43,7 @@ def balance(book):
         total_expense += amount
         count += 1
 
-        result.append(
-            f"{check} {category} {amount:.2f} Balance {balance:.2f}"
-        )
+        result.append(f"{check} {category} {amount:.2f} Balance {balance:.2f}")
 
     average = total_expense / count if count else 0
 
@@ -102,7 +99,7 @@ def nba_cup(result_sheet, to_find):
     scored = conceded = points = 0
     played = False
 
-    pattern = r'^(.+?) (\d+(?:\.\d+)?) (.+?) (\d+(?:\.\d+)?)$'
+    pattern = r"^(.+?) (\d+(?:\.\d+)?) (.+?) (\d+(?:\.\d+)?)$"
 
     for game in split_line:
         game = game.strip()
@@ -141,27 +138,24 @@ def nba_cup(result_sheet, to_find):
     if not played:
         return f"{to_find}:This team didn't play!"
 
-    return (
-        f"{to_find}:W={wins};D={draws};L={losses};"
-        f"Scored={scored};Conceded={conceded};Points={points}"
-    )
+    return f"{to_find}:W={wins};D={draws};L={losses};" f"Scored={scored};Conceded={conceded};Points={points}"
 
 
 def stock_list(stocklist, categories):
     """Help the bookseller."""
     if not stocklist or not categories:
         return ""
-    
+
     result = []
-    
+
     for cat in categories:
         total = 0
-        
+
         for book in stocklist:
-            code, count  = book.split()
+            code, count = book.split()
             if code[0] == cat:
-                total += int(count )
-        
+                total += int(count)
+
         result.append(f"({cat} : {total})")
-    
+
     return " - ".join(result)

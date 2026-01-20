@@ -12,7 +12,7 @@ def gap(g, m, n):
             continue
 
         is_prime = True
-        for i in range(2, int(x ** 0.5) + 1):
+        for i in range(2, int(x**0.5) + 1):
             if x % i == 0:
                 is_prime = False
                 break
@@ -40,7 +40,7 @@ def perimeter(n):
     n1 = 1
     sum_of_sides = 0
 
-    for i in range(n + 1):
+    for _ in range(n + 1):
         sum_of_sides += n0
         next_value = n0 + n1
         n0 = n1
@@ -50,23 +50,23 @@ def perimeter(n):
 
 
 def solve(m):
-    """Which x for that sum? """
-    disc = (2*m + 1)**2 - 4*m*m
-    x = ((2*m + 1) - sqrt(disc)) / (2*m)
+    """Which x for that sum?"""
+    disc = (2 * m + 1) ** 2 - 4 * m * m
+    x = ((2 * m + 1) - sqrt(disc)) / (2 * m)
     return x
 
 
 def smallest(n):
     """Find the smallest."""
     s = str(n)
-    best = (n, 0, 0)  
-    
+    best = (n, 0, 0)
+
     for i, digit in enumerate(s):
-        rest = s[:i] + s[i+1:]  
-        
-        for j in range(len(rest)+1): 
+        rest = s[:i] + s[i + 1 :]
+
+        for j in range(len(rest) + 1):
             candidate = rest[:j] + digit + rest[j:]
             candidate_num = int(candidate)
             best = min(best, (candidate_num, i, j))
-            
+
     return list(best)

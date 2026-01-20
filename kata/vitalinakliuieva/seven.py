@@ -10,8 +10,6 @@ def new_avg(arr, new_num):
     if needed <= 0:
         raise ValueError("Expected donation must be a positive number")
     return needed
-
-
 def series_sum(n):
     """Sum of the first nth term of Series exercise"""
     if n == 0:

@@ -1,4 +1,4 @@
-"""8kyu tasks."""
+"""7kyu tasks."""
 
 import math
 

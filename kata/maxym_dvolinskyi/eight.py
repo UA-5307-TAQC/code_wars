@@ -4,7 +4,7 @@ import math
 
 
 def liters(time):
-    """Ruturn rounded amount of water."""
+    """Return rounded amount of water."""
     return time // 2
 
 

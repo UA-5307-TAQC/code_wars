@@ -26,7 +26,7 @@ def gap(g: int, m: int, n: int):
     return None
 
 
-def _is_prime(n):
+def _is_prime(n: int) -> bool:
     """Check if n is prime."""
     if n <= 1:
         return False

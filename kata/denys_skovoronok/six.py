@@ -78,7 +78,7 @@ def variance(town: str, s: str):
         return -1
 
 
-def nba_cup(result_sheet: str, to_find: str):
+def nba_cup(result_sheet: list, to_find: str):
     """Calculate match statistic in games."""
     if not to_find:
         return ""

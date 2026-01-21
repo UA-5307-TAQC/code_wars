@@ -8,12 +8,6 @@ def litres(time: float):
     return int(time * 0.5)
 
 
-def run_litres():
-    """Run litres function based on time."""
-    time = float(input("Enter time: "))
-    return litres(time)
-
-
 def get_volume_of_cuboid(length: float, width: float, height: float):
     """Calculate volume of cuboid."""
     return length * width * height

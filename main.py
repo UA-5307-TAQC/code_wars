@@ -35,7 +35,7 @@ def get_tasks(author):
                     else:
                         menu_name = func.__name__.replace("_", " ").capitalize()
 
-                all_tasks[menu_name] = func
+                    all_tasks[menu_name] = func
 
         except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"Some problem with {file_path.name}: {e}")

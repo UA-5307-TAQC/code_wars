@@ -1,6 +1,21 @@
 """Kata main file. Running functions."""
 import importlib
 
+class AuthorSelector:
+    def __init__(self):
+        self.authors = [
+            "denys_skovoronok",
+            "hlib_shramko",
+            "kekish",
+            "kostiantyn_osypenko",
+            "maxym_dvolinskyi",
+            "tliubov",
+            "valentyn_yehoian",
+            "vitalinakliuieva",
+            "anzhela_maliarevych", 
+        ]
+        
+
 EXERCISE_MAP: dict[int, dict[str, str | list[str]]] = {
     1: {  # Eight
         "file": "eight",
@@ -78,11 +93,27 @@ FUNCTION_PARAMS = {
 }
 
 
-def get_authors():
-    """Get authors list."""
-    authors = ["denys_skovoronok", "hlib_shramko", "kekish", "kostiantyn_osypenko", "maxym_dvolinskyi", "tliubov",
-               "valentyn_yehoian", "vitalinakliuieva"]
-    return authors
+# def get_authors():
+#     """Get authors list."""
+#     authors = ["denys_skovoronok", "hlib_shramko", "kekish", "kostiantyn_osypenko", "maxym_dvolinskyi", "tliubov",
+#                "valentyn_yehoian", "vitalinakliuieva"]
+#     return authors
+
+def get_author(self):
+    while True:
+        try:
+            choiсe = int(input("Введіть цифру: "))
+            if 1<= choiсe <= len(self.authors):
+                return self.authors[choiсe - 1]
+            raise ValueError
+        except ValueError:
+            print("Упс... такої цифри немає")
+            
+
+def show(self):
+    for i, author in enumerate(self.authors, 1):
+        print(f"{i}. {author}") 
+                
 
 
 def get_exercises(type_of_exercise):
@@ -124,7 +155,7 @@ def get_parameters(func_name):
 
 def choose_author():
     """Choose author."""
-    authors = get_authors()
+    authors = get_author()
     print("Choose an author:\n")
 
     for index, author in enumerate(authors, 1):
@@ -192,7 +223,10 @@ def run_exercise(author, type_choice, function_name):
 
 def main():
     """Main function."""
-    author = choose_author()
+    # author = choose_author()
+    selector = AuthorSelector()
+    selector.show()
+    author = selector.get_author()
     type_choice = choose_file()
     function_name = choose_function(type_choice)
 

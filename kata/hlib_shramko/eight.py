@@ -1,9 +1,9 @@
 """8kyu tasks."""
 
-from core import kata  # pylint: disable=import-error
+from core import Tasks, kata  # pylint: disable=import-error
 
 
-@kata("Keep Hydrated!")
+@kata(Tasks.EIGHT.value.litres)
 def litres(time):
     """Keep Hydrated."""
     return int(time * 0.5)

@@ -2,7 +2,10 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Looking for a benefactor")
 def new_avg(arr, newavg):
     """Calculate the expected donation."""
     sum_of_array = sum(i for i in arr)
@@ -13,6 +16,7 @@ def new_avg(arr, newavg):
     return math.ceil(expected_number)
 
 
+@kata("Sum of the first nth term of Series")
 def series_sum(n):
     """Calculate the first nth term of the series."""
     if n == 0:

@@ -2,7 +2,10 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Gap in Primes")
 def gap(g, m, n):
     """Gap in Primes exercise"""
     last_prime = None
@@ -16,9 +19,12 @@ def gap(g, m, n):
 
 def is_prime(n):
     """Check if number is prime."""
+    # Це допоміжна функція, тому декоратор зазвичай не потрібен,
+    # якщо тільки це не окрема задача (наприклад, 'Is a number prime?')
     return n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1))
 
 
+@kata("Number of trailing zeros of N!")
 def zeros(n):
     """Number of trailing zeros of N! exercise"""
     count = 0
@@ -28,6 +34,7 @@ def zeros(n):
     return count
 
 
+@kata("Perimeter of squares in a rectangle")
 def perimeter(n):
     """Perimeter of squares in a rectangle"""
     previous = 1
@@ -39,11 +46,13 @@ def perimeter(n):
     return 4 * total
 
 
+@kata("Which x for that sum?")
 def solve(m):
     """Which x for that sum?"""
     return (2 * m + 1 - math.sqrt(4 * m + 1)) / (2 * m)
 
 
+@kata("Find the smallest")
 def smallest(n):
     """Find the smallest"""
     num = str(n)

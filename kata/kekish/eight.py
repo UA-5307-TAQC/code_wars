@@ -2,17 +2,22 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Keep Hydrated!")
 def litres(time):
     """Keep Hydrated."""
     return math.floor(time / 2)
 
 
+@kata("Volume of a Cuboid")
 def get_volume_of_cuboid(length, width, height):
     """Volume of a Cuboid."""
     return length * width * height
 
 
+@kata("Miles per gallon to kilometers per liter")
 def converter(mpg):
     """Miles per gallon to kilometers per liter."""
     galon_in_liters = 4.54609188
@@ -20,6 +25,7 @@ def converter(mpg):
     return round(mpg * mile_in_kilometers / galon_in_liters, 2)
 
 
+@kata("To square(root) or not to square(root)")
 def square_or_square_root(arr):
     """To square(root) or not to square(root)."""
     list_of_numbers = []
@@ -33,6 +39,7 @@ def square_or_square_root(arr):
     return list_of_numbers  # return [n**(1/2) if n**(1/2).is_integer() else n for n in arr]
 
 
+@kata("Count of positives / sum of negatives")
 def count_positives_sum_negatives(arr):
     """Count of positives / sum of negatives."""
     if arr is None or len(arr) == 0:
@@ -50,6 +57,7 @@ def count_positives_sum_negatives(arr):
     return [positive_count, negative_sum]
 
 
+@kata("Convert a String to a Number!")
 def string_to_number(s):
     """Convert a String to a Number."""
     return int(s)
@@ -67,6 +75,7 @@ def is_prime(n):
     return True
 
 
+@kata("Am I Wilson")
 def am_i_wilson(n):
     """Wilson primes."""
     if not is_prime(n):
@@ -75,15 +84,17 @@ def am_i_wilson(n):
     return ((math.factorial(n - 1) + 1) % n**2) == 0
 
 
+@kata("Formatting decimal places #0")
 def two_decimal_places(n):
     """Format decimal places."""
     return round(n, 2)
 
 
+@kata("Find numbers which are divisible by given number")
 def divisible_by(numbers, divisor):
     """Find numbers which are divisible by given number."""
     res = []
     for n in numbers:
         if n % divisor == 0:
             res.append(n)
-    return res  # return [if n % divisor == 0 for n in numbers]
+    return res  # return [n for n in numbers if n % divisor == 0]

@@ -1,9 +1,13 @@
+# pylint: disable=too-many-locals, too-many-branches, cell-var-from-loop, consider-using-generator
 """6kuy tasks."""
 
 import math
 import re
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Build a pile of Cubes")
 def find_nb(m):
     """Build a pile of Cubes."""
     volume = 0
@@ -18,6 +22,7 @@ def find_nb(m):
     return -1
 
 
+@kata("Easy Balance Checking")
 def balance(book):
     """Easy Balance Checking."""
     num_pattern = r"\d+\.?\d*"
@@ -49,6 +54,7 @@ def balance(book):
     return "\r\n".join(result)
 
 
+@kata("Floating-point Approximation (I)")
 def f(x):
     """Floating-point Approximation."""
     return x / (math.sqrt(1 + x) + 1)
@@ -66,6 +72,7 @@ def get_data(town, s):
     return [float(month.split(" ")[1]) for month in data]
 
 
+@kata("Rainfall")
 def mean(town, s):
     """Get mean value."""
     numbers = get_data(town, s)
@@ -76,6 +83,7 @@ def mean(town, s):
     return sum(numbers) / len(numbers)
 
 
+@kata("Rainfall")
 def variance(town, s):
     """Get variance."""
     mean_value = mean(town, s)
@@ -97,6 +105,7 @@ def serialize_match_data(match_str):
         raise ValueError(f"Error(float number):{match_str}") from err
 
 
+@kata("Ranking NBA teams")
 def nba_cup(result_sheet, to_find):
     """Rank NBA team."""
     if not to_find:
@@ -134,6 +143,7 @@ def nba_cup(result_sheet, to_find):
     return f"{to_find}:W={wins};D={draws};L={loses};Scored={scored};Conceded={conceded};Points={points}"
 
 
+@kata("Help the bookseller !")
 def stock_list(stocklist, categories):
     """Help the bookseller."""
     if not stocklist or not categories:

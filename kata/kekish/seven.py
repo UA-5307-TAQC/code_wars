@@ -2,6 +2,8 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
+
 
 def divisible_by(numbers, divisor):
     """Find numbers which are divisible by given number."""
@@ -15,6 +17,7 @@ def divisible_by(numbers, divisor):
 #     return [if n % divisor == 0 for n in numbers]
 
 
+@kata("Looking for a benefactor")
 def new_avg(arr, new_average):
     """Look for a benefactor."""
     current_sum = 0
@@ -30,6 +33,7 @@ def new_avg(arr, new_average):
     return math.ceil(donation)
 
 
+@kata("Sum of the first nth term of Series")
 def series_sum(n):
     """Sum of the first nth term of Series."""
     res = 0

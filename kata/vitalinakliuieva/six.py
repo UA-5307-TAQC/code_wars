@@ -3,7 +3,10 @@
 import math
 import re
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Build a pile of Cubes")
 def find_nb(m):
     """Build a pile of Cubes exercise"""
     n = 0
@@ -16,6 +19,7 @@ def find_nb(m):
     return n if total == m else -1
 
 
+@kata("Easy Balance Checking")
 def balance(book):
     """Easy Balance Checking exercise"""
     lines = book.splitlines()
@@ -46,11 +50,13 @@ def balance(book):
     return "\r\n".join(report_lines)
 
 
+@kata("Floating-point Approximation (I)")
 def f(x):
     """Floating-point Approximation  exercise"""
     return x / (math.sqrt(1 + x) + 1)
 
 
+@kata("Rainfall")
 def mean(town, s):
     """Rainfall exercise"""
     values = get_values(town, s)
@@ -59,6 +65,7 @@ def mean(town, s):
     return sum(values) / len(values)
 
 
+@kata("Rainfall")
 def variance(town, s):
     """Rainfall exercise"""
     values = get_values(town, s)
@@ -78,6 +85,7 @@ def get_values(town, s):
     return None
 
 
+@kata("Ranking NBA teams")
 def nba_cup(result_sheet, to_find):  # pylint: disable=R0914, R0912
     """Ranking NBA teams exercise"""
     if not to_find:
@@ -145,6 +153,7 @@ def nba_cup(result_sheet, to_find):  # pylint: disable=R0914, R0912
     return f"{to_find}:W={wins};D={draws};L={losses};" f"Scored={scored};Conceded={conceded};Points={points}"
 
 
+@kata("Help the bookseller !")
 def stock_list(stocklist, categories):
     """Help the bookseller ! exercise"""
     total = 0

@@ -2,7 +2,10 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Gap in Primes")
 def gap(g, m, n):
     """Find first prime numbers between m and n that equals g(gap)."""
     prime_list = []
@@ -37,6 +40,7 @@ def is_prime(n):
     return True
 
 
+@kata("Number of trailing zeros of N!")
 def zeros(n):
     """Find zeroes in factorial of n."""
     result = 0
@@ -47,6 +51,7 @@ def zeros(n):
     return result
 
 
+@kata("Perimeter of squares in a rectangle")
 def perimeter(n):
     """Find perimeter of n integers that raises in fibonacci sequence."""
     if n == 0:
@@ -62,11 +67,13 @@ def perimeter(n):
     return total_sum * 4
 
 
+@kata("Which x for that sum?")
 def solve(m):
     """Find x for sum m"""
     return (2 * m + 1 - math.sqrt(4 * m + 1)) / (2 * m)
 
 
+@kata("Find the smallest")
 def smallest(n):
     """Find the smallest number, and put it in correct position \
     to get main number the smallest possible."""

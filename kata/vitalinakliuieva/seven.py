@@ -2,7 +2,10 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Looking for a benefactor")
 def new_avg(arr, new_num):
     """Looking for a benefactor exercise"""
     needed = new_num * (len(arr) + 1) - sum(arr)
@@ -12,6 +15,7 @@ def new_avg(arr, new_num):
     return needed
 
 
+@kata("Sum of the first nth term of Series")
 def series_sum(n):
     """Sum of the first nth term of Series exercise"""
     if n == 0:

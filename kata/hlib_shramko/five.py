@@ -1,6 +1,9 @@
 """5kyu tasks."""
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Gap in Primes")
 def gap(g, m, n):
     """Gap in Primes."""
     previous = None
@@ -25,6 +28,7 @@ def gap(g, m, n):
     return None
 
 
+@kata("Number of trailing zeros of N!")
 def zeros(n):
     """Number of trailing zeros of N!."""
     count = 0
@@ -35,6 +39,7 @@ def zeros(n):
     return count
 
 
+@kata("Perimeter of squares in a rectangle")
 def perimeter(n):
     """Perimeter of squares in a rectangle."""
     a = b = c = 1
@@ -45,11 +50,13 @@ def perimeter(n):
     return 4 * c
 
 
+@kata("Which x for that sum?")
 def solve(m):
     """Which x for that sum."""
     return (2 * m + 1 - (4 * m + 1) ** 0.5) / (2 * m)
 
 
+@kata("Find the smallest")
 def smallest(n):
     """Find the smallest."""
     s = str(n)

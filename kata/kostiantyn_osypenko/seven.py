@@ -1,6 +1,9 @@
 """Solutions for 7 kyu tasks."""
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Looking for a benefactor")
 def new_avg(arr: list, newavg):
     """Look for a benefactor solution."""
     actual_sum = sum(arr)
@@ -10,6 +13,7 @@ def new_avg(arr: list, newavg):
     raise ValueError
 
 
+@kata("Sum of the first nth term of Series")
 def series_sum(n):
     """Sum of the first nth term of series solution."""
     res = 0

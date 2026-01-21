@@ -1,8 +1,13 @@
+# pylint: disable=too-many-locals, too-many-branches
+
 """File for solving CodeWars 6kyu tasks."""
 
 import re
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Build a pile of Cubes")
 def find_nb(m):
     """Build a pile of cubes."""
     current_sum = 0
@@ -17,6 +22,7 @@ def find_nb(m):
     return n
 
 
+@kata("Easy Balance Checking")
 def balance(book):
     """Calculate balance of receipt."""
     book = re.split(pattern=r"[,!?:;\r}{=\n ]", string=book)
@@ -49,11 +55,14 @@ def balance(book):
     return str(receipt)
 
 
+@kata("Floating-point Approximation (I)")
 def f(x):
     """Floating point function."""
+    # Використання ряду Тейлора для апроксимації sqrt(1+x)-1
     return x / 2 - x**2 / 8 + x**3 / 16 - 5 * x**4 / 128
 
 
+@kata("Rainfall")
 def mean(town, s):
     """Calculate average rainfall."""
     try:
@@ -65,6 +74,7 @@ def mean(town, s):
         return -1
 
 
+@kata("Rainfall")
 def variance(town, s):
     """Calculate variance."""
     try:
@@ -78,6 +88,7 @@ def variance(town, s):
         return -1
 
 
+@kata("Ranking NBA teams")
 def nba_cup(result_sheet, to_find):
     """Calculate match statistic in games."""
     if not to_find:
@@ -140,6 +151,7 @@ def nba_cup(result_sheet, to_find):
     return result.format(to_find, wins, draws, loses, scored, conceded, points)
 
 
+@kata("Help the bookseller !")
 def stock_list(stocklist, categories):
     """Count number of books sorted by category."""
     if not stocklist or not categories:

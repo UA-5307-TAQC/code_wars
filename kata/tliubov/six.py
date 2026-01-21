@@ -3,7 +3,10 @@
 import re
 from math import sqrt
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Build a pile of Cubes")
 def find_nb(m):
     """Build a pile of Cubes."""
 
@@ -15,6 +18,7 @@ def find_nb(m):
     return cube_count if possible_volume == m else -1
 
 
+@kata("Easy Balance Checking")
 def balance(book):
     """Easy Balance Checking."""
 
@@ -49,6 +53,7 @@ def balance(book):
     return result_str
 
 
+@kata("Floating-point Approximation (I)")
 def f(x):
     """Floating-point Approximation (I)."""
 
@@ -67,6 +72,7 @@ def find_monthly_data(town, s):
     return []
 
 
+@kata("Rainfall")
 def mean(town, s):
     """Rainfall - find mean of rainfall for the town."""
 
@@ -80,6 +86,7 @@ def mean(town, s):
     return total_rainfall / 12
 
 
+@kata("Rainfall")
 def variance(town, s):
     """Rainfall - find variance of rainfall for the town."""
 
@@ -95,6 +102,7 @@ def variance(town, s):
     return deviation_sum / 12
 
 
+@kata("Ranking NBA teams")
 def nba_cup(result_sheet, to_find):
     """Rank NBA teams."""
 
@@ -143,6 +151,7 @@ def nba_cup(result_sheet, to_find):
     )
 
 
+@kata("Help the bookseller !")
 def stock_list(stocklist, categories):
     """Help the bookseller."""
 

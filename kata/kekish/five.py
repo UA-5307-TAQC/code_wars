@@ -2,6 +2,8 @@
 
 import math
 
+from core import kata  # pylint: disable=import-error
+
 
 def is_prime(n):
     """Check if n is prime."""
@@ -15,6 +17,7 @@ def is_prime(n):
     return True
 
 
+@kata("Gap in Primes")
 def gap(g, m, n):
     """Find gap between two prime numbers."""
     previous_prime = None
@@ -34,6 +37,7 @@ def gap(g, m, n):
     return None
 
 
+@kata("Number of trailing zeros of N!")
 def zeros(n):
     """Number of trailing zeros of N."""
     if n < 0:
@@ -49,6 +53,7 @@ def zeros(n):
     return count
 
 
+@kata("Perimeter of squares in a rectangle")
 def perimeter(n):
     """Find perimeter of squares in a rectangle."""
     a, b = 1, 1
@@ -57,6 +62,7 @@ def perimeter(n):
     return 4 * (a - 1)
 
 
+@kata("Which x for that sum?")
 def solve(m):
     """Which x for that sum."""
     b = -(2 * m + 1)
@@ -72,6 +78,7 @@ def solve(m):
     return x2
 
 
+@kata("Find the smallest")
 def smallest(n):
     """Find smallest number in a sequence."""
     digits = str(n)

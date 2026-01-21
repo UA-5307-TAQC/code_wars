@@ -2,7 +2,10 @@
 
 import re
 
+from core import kata  # pylint: disable=import-error
 
+
+@kata("Build a pile of Cubes")
 def find_nb(m):
     """Build a pile of Cubes."""
     n = 0
@@ -17,6 +20,7 @@ def find_nb(m):
     return -1
 
 
+@kata("Easy Balance Checking")
 def balance(book):
     """Easy Balance Checking."""
     lines = book.splitlines()
@@ -52,11 +56,13 @@ def balance(book):
     return "\r\n".join(result)
 
 
+@kata("Floating-point Approximation (I)")
 def f(x):
     """Floating-point Approximation (I)."""
     return x / ((1 + x) ** 0.5 + 1)
 
 
+@kata("Rainfall")
 def mean(town, s):
     """Rainfall."""
     line = None
@@ -75,6 +81,7 @@ def mean(town, s):
     return sum(rains) / len(rains)
 
 
+@kata("Rainfall")
 def variance(town, s):
     """Rainfall."""
     line = None
@@ -99,6 +106,7 @@ def variance(town, s):
 
 
 # pylint: disable=too-many-locals, too-many-branches
+@kata("Ranking NBA teams")
 def nba_cup(result_sheet, to_find):
     """Ranking NBA teams."""
     if not to_find:
@@ -162,6 +170,7 @@ def nba_cup(result_sheet, to_find):
     return f"{to_find}:W={wins};D={draws};L={losses};Scored={scored};" f"Conceded={conceded};Points={points}"
 
 
+@kata("Help the bookseller !")
 def stock_list(books, categories):
     """Help the bookseller."""
     if not books or not categories:

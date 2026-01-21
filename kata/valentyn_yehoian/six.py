@@ -3,9 +3,12 @@
 import math
 import re
 
+from core import kata  # pylint: disable=import-error
+
 MATCH_PATTERN = re.compile(r"^(.+?)\s+([\d\.]+)\s+(.+?)\s+([\d\.]+)$")
 
 
+@kata("Build a pile of Cubes")
 def find_nb(m):
     """Finds the integer"""
     i = 0
@@ -18,6 +21,7 @@ def find_nb(m):
     return -1
 
 
+@kata("Easy Balance Checking")
 def balance(book):
     """Cleans the checkbook string,returns a formatted report with expenses."""
     chars_to_remove = ",;:!=?{}"
@@ -54,6 +58,7 @@ def balance(book):
     return "\r\n".join(result_lines)
 
 
+@kata("Floating-point Approximation (I)")
 def f(x):
     """Calculates the function value."""
     return x / (math.sqrt(1 + x) + 1)
@@ -85,6 +90,7 @@ def get_town_data(town, s):
     return values
 
 
+@kata("Rainfall")
 def mean(town, s):
     """Calculates the average rainfall for a given town."""
     values = get_town_data(town, s)
@@ -95,6 +101,7 @@ def mean(town, s):
     return sum(values) / len(values)
 
 
+@kata("Rainfall")
 def variance(town, s):
     """Calculates the variance of rainfall for a given town."""
     values = get_town_data(town, s)
@@ -121,6 +128,7 @@ def update_stats(stats, own, opp):
         stats["L"] += 1
 
 
+@kata("Ranking NBA teams")
 def nba_cup(result_sheet, to_find):
     """Parses NBA match results using Regex."""
     if to_find == "":
@@ -166,6 +174,7 @@ def nba_cup(result_sheet, to_find):
     )
 
 
+@kata("Help the bookseller !")
 def stock_list(stocklist, categories):
     """Summarizes the total quantity of books for each category code provided."""
     if not stocklist or not categories:

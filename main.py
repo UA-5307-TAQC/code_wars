@@ -86,9 +86,11 @@ def run_task(func):
                 break
             except ValueError:
                 print("Invalid value, try again")
+                TASKS.clear()
 
     result = func(*values)
     print("Result:", result)
+    TASKS.clear()
 
 
 def display_tasks():
@@ -113,6 +115,7 @@ def display_tasks():
 
         _, task_func = tasks[index - 1]
         run_task(task_func)
+        # TASKS = {}
         break
 
 

@@ -3,7 +3,7 @@
 import math
 
 
-def new_avg(arr, newavg):
+def new_avg(arr: list, newavg: int):
     """Calculate the expected donation."""
     sum_of_array = sum(i for i in arr)
     expected_number = (newavg * (len(arr) + 1)) - sum_of_array
@@ -13,7 +13,7 @@ def new_avg(arr, newavg):
     return math.ceil(expected_number)
 
 
-def series_sum(n):
+def series_sum(n: int):
     """Calculate the first nth term of the series."""
     if n == 0:
         return "0.00"

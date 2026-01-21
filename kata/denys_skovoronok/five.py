@@ -3,7 +3,7 @@
 import math
 
 
-def gap(g, m, n):
+def gap(g: int, m: int, n: int):
     """Find first prime numbers between m and n that equals g(gap)."""
     prime_list = []
 
@@ -13,7 +13,7 @@ def gap(g, m, n):
     for i in range(m, n + 2):
 
         if len(prime_list) < 2:
-            if is_prime(i):
+            if _is_prime(i):
                 prime_list.append(i)
 
             else:
@@ -26,7 +26,7 @@ def gap(g, m, n):
     return None
 
 
-def is_prime(n):
+def _is_prime(n):
     """Check if n is prime."""
     if n <= 1:
         return False
@@ -37,7 +37,7 @@ def is_prime(n):
     return True
 
 
-def zeros(n):
+def zeros(n: int):
     """Find zeroes in factorial of n."""
     result = 0
 
@@ -47,7 +47,7 @@ def zeros(n):
     return result
 
 
-def perimeter(n):
+def perimeter(n: int):
     """Find perimeter of n integers that raises in fibonacci sequence."""
     if n == 0:
         return 4
@@ -62,12 +62,12 @@ def perimeter(n):
     return total_sum * 4
 
 
-def solve(m):
+def solve(m: float):
     """Find x for sum m"""
     return (2 * m + 1 - math.sqrt(4 * m + 1)) / (2 * m)
 
 
-def smallest(n):
+def smallest(n: int):
     """Find the smallest number, and put it in correct position \
     to get main number the smallest possible."""
     s = str(n)

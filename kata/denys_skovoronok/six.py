@@ -3,7 +3,7 @@
 import re
 
 
-def find_nb(m):
+def find_nb(m: int):
     """Build a pile of cubes."""
     current_sum = 0
     n = 0
@@ -17,7 +17,7 @@ def find_nb(m):
     return n
 
 
-def balance(book):
+def balance(book: str):
     """Calculate balance of receipt."""
     book = re.split(pattern=r"[,!?:;\r}{=\n ]", string=book)
     book = [i for i in book if i]
@@ -49,12 +49,12 @@ def balance(book):
     return str(receipt)
 
 
-def f(x):
+def f(x: float):
     """Floating point function."""
     return x / 2 - x**2 / 8 + x**3 / 16 - 5 * x**4 / 128
 
 
-def mean(town, s):
+def mean(town: str, s: str):
     """Calculate average rainfall."""
     try:
         s = re.split(pattern=r"[,:\n ]", string=s)
@@ -65,7 +65,7 @@ def mean(town, s):
         return -1
 
 
-def variance(town, s):
+def variance(town: str, s: str):
     """Calculate variance."""
     try:
         s = re.split(pattern=r"[,:\n ]", string=s)
@@ -78,69 +78,53 @@ def variance(town, s):
         return -1
 
 
-def nba_cup(result_sheet, to_find):
+def nba_cup(result_sheet: str, to_find: str):
     """Calculate match statistic in games."""
     if not to_find:
         return ""
 
-    wins = 0
-    draws = 0
-    loses = 0
-    scored = 0
-    conceded = 0
-    points = 0
+    stats = {"W": 0, "D": 0, "L": 0, "Scored": 0, "Conceded": 0, "Points": 0}
     played = False
 
     for game in result_sheet.split(","):
-        pattern = r"^(.*?) (\d+(?:\.\d+)?) (.*?) (\d+(?:\.\d+)?)$"
-        match = re.match(pattern, game)
+        match = re.match(pattern=r"^(.*?) (\d+(?:\.\d+)?) (.*?) (\d+(?:\.\d+)?)$", string=game)
 
         if match:
-            team_1 = match.group(1)
-            score_1 = match.group(2)
-            team_2 = match.group(3)
-            score_2 = match.group(4)
+            team_1, score_1, team_2, score_2 = match.groups()
 
             if "." in score_1 or "." in score_2:
                 return f"Error(float number):{game}"
 
-            score_1, score_2 = int(score_1), int(score_2)
-
             if team_1 == to_find:
-                played = True
-                scored += score_1
-                conceded += score_2
-
-                if score_1 > score_2:
-                    wins += 1
-                    points += 3
-                elif score_1 == score_2:
-                    draws += 1
-                    points += 1
-                else:
-                    loses += 1
+                our_scr, opp_scr = int(score_1), int(score_2)
             elif team_2 == to_find:
-                played = True
-                scored += score_2
-                conceded += score_1
+                our_scr, opp_scr = int(score_2), int(score_1)
+            else:
+                continue
 
-                if score_2 > score_1:
-                    wins += 1
-                    points += 3
-                elif score_1 == score_2:
-                    draws += 1
-                    points += 1
-                else:
-                    loses += 1
+            played = True
+            stats["Scored"] += our_scr
+            stats["Conceded"] += opp_scr
+
+            if our_scr > opp_scr:
+                stats["W"] += 1
+                stats["Points"] += 3
+            elif our_scr == opp_scr:
+                stats["D"] += 1
+                stats["Points"] += 2
+            else:
+                stats["L"] += 1
 
     if not played:
         return f"{to_find}:This team didn't play!"
 
-    result = "{}:W={};D={};L={};Scored={};Conceded={};Points={}"
-    return result.format(to_find, wins, draws, loses, scored, conceded, points)
+    return (
+        f"{to_find}:W={stats['W']};D={stats['D']};L={stats['L']};Scored={stats['Scored']};"
+        f"Conceded={stats['Conceded']};Points={stats['Points']}"
+    )
 
 
-def stock_list(stocklist, categories):
+def stock_list(stocklist: list, categories: list):
     """Count number of books sorted by category."""
     if not stocklist or not categories:
         return ""

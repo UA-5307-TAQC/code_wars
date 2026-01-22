@@ -11,7 +11,7 @@ def find_nb(m):
 
     while total < m:
         n += 1
-        total += n**3
+        total += n ** 3
 
     return n if total == m else -1
 
@@ -19,7 +19,7 @@ def find_nb(m):
 def balance(book):
     """Easy Balance Checking exercise"""
     lines = book.splitlines()
-    lines = [re.sub(r"[^a-zA-Z0-9. ]+", "", line) for line in lines if line.strip()]
+    lines = [re.sub(r"[^a-zA-Z0-9. ]+","",line) for line in lines if line.strip()]
 
     balance_num = float(lines[0])
     report_lines = [f"Original Balance: {balance_num:.2f}"]
@@ -51,17 +51,24 @@ def f(x):
     return x / (math.sqrt(1 + x) + 1)
 
 
-def mean(town, s):
+def rainfall(town,s):
     """Rainfall exercise"""
-    values = get_values(town, s)
+    mean = town.mean(town,s)
+    variance = town.variance(town,s)
+    return [mean,variance]
+
+
+def mean(town,s):
+    """Rainfall exercise"""
+    values = town.get_values(town,s)
     if values is None:
         return -1
     return sum(values) / len(values)
 
 
-def variance(town, s):
+def variance(town,s):
     """Rainfall exercise"""
-    values = get_values(town, s)
+    values = town.get_values(town,s)
     if values is None:
         return -1
 
@@ -69,7 +76,7 @@ def variance(town, s):
     return sum((x - avg) ** 2 for x in values) / len(values)
 
 
-def get_values(town, s):
+def get_values(town,s):
     """Get values for Rainfall exercise"""
     for line in s.split("\n"):
         if line.startswith(town + ":"):
@@ -78,7 +85,7 @@ def get_values(town, s):
     return None
 
 
-def nba_cup(result_sheet, to_find):  # pylint: disable=R0914, R0912
+def nba_cup(result_sheet,to_find):  # pylint: disable=R0914, R0912
     """Ranking NBA teams exercise"""
     if not to_find:
         return ""
@@ -101,17 +108,17 @@ def nba_cup(result_sheet, to_find):  # pylint: disable=R0914, R0912
                 except ValueError:
                     pass
 
-        score_indexes = [i for i, p in enumerate(parts) if p.isdigit()]
+        score_indexes = [i for i,p in enumerate(parts) if p.isdigit()]
         if len(score_indexes) != 2:
             continue
 
-        i1, i2 = score_indexes
-        score1, score2 = int(parts[i1]), int(parts[i2])
+        i1,i2 = score_indexes
+        score1,score2 = int(parts[i1]),int(parts[i2])
 
         team1 = " ".join(parts[:i1])
-        team2 = " ".join(parts[i1 + 1 : i2])
+        team2 = " ".join(parts[i1 + 1: i2])
 
-        if to_find not in (team1, team2):
+        if to_find not in (team1,team2):
             continue
 
         found = True
@@ -145,7 +152,7 @@ def nba_cup(result_sheet, to_find):  # pylint: disable=R0914, R0912
     return f"{to_find}:W={wins};D={draws};L={losses};" f"Scored={scored};Conceded={conceded};Points={points}"
 
 
-def stock_list(stocklist, categories):
+def stock_list(stocklist,categories):
     """Help the bookseller ! exercise"""
     total = 0
     result = []
@@ -153,7 +160,7 @@ def stock_list(stocklist, categories):
         return ""
     for category in categories:
         for book in stocklist:
-            if re.search(category, book[0]):
+            if re.search(category,book[0]):
                 num = book.split(" ")[1]
                 total += int(num)
         result.append(f"({category} : {total})")

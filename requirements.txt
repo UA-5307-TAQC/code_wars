@@ -27,3 +27,4 @@ pytokens==0.3.0
 PyYAML==6.0.3
 tomlkit==0.14.0
 virtualenv==20.36.1
+numpy==1.26.4

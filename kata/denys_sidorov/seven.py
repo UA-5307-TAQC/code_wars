@@ -1,7 +1,7 @@
 import math
 import numpy as np
 
-def ex10_benefactor(donations, average):
+def new_avg(donations, average):
     donations_sum = 0
     donations_count = 0
     for donation in donations:
@@ -14,7 +14,7 @@ def ex10_benefactor(donations, average):
         return "ERROR"
     return expected_donation
 
-def ex11_series_sum(n):
+def series_sum(n):
     if n == 0:
         return "\"0.00\""
     series = [1 / (3 * i - 2) for i in range(1, n + 1)]

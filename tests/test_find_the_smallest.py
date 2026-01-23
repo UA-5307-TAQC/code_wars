@@ -5,7 +5,7 @@ from kata.denys_sidorov import five as denys_sidorov_find_the_smallest
 from kata.denys_skovoronok import five as denys_skovoronok_find_the_smallest
 from kata.hlib_shramko import five as hlib_shramko_find_the_smallest
 from kata.kekish import five as kekish_find_the_smallest
-"""from kata.kostiantyn_osypenko import five as kostiantyn_osypenko_find_the_smallest"""
+#from kata.kostiantyn_osypenko import five as kostiantyn_osypenko_find_the_smallest
 from kata.maxym_dvolinskyi import five as maxym_dvolinskyi_find_the_smallest
 from kata.tliubov import five as tliubov_find_the_smallest
 from kata.valentyn_yehoian import five as valentyn_yehoian_find_the_smallest
@@ -36,11 +36,11 @@ def test_kekish_shramko_find_the_smallest():
     assert kekish_find_the_smallest.smallest(261235) == [126235, 2, 0]
     assert kekish_find_the_smallest.smallest(209917) == [29917, 0, 1]
     assert kekish_find_the_smallest.smallest(285365) == [238565, 3, 1]
-"""def test_kostian_shramko_find_the_smallest():
-    "Test find_the_smallest for kostian_shramko_find_the_smallest"
-    assert kostiantyn_osypenko_find_the_smallest.smallest(261235) == [126235, 2, 0]
-    assert kostiantyn_osypenko_find_the_smallest.smallest(209917) == [29917, 0, 1]
-    assert kostiantyn_osypenko_find_the_smallest.smallest(285365) == [238565, 3, 1]"""
+#def test_kostian_shramko_find_the_smallest():
+    #   "Test find_the_smallest for kostian_shramko_find_the_smallest"
+    #assert kostiantyn_osypenko_find_the_smallest.smallest(261235) == [126235, 2, 0]
+    #assert kostiantyn_osypenko_find_the_smallest.smallest(209917) == [29917, 0, 1]
+    #assert kostiantyn_osypenko_find_the_smallest.smallest(285365) == [238565, 3, 1]
 def test_maxym_dvolinskyi_find_the_smallest():
     """Test find_the_smallest for maxym_dvolinskyi_find_the_smallest"""
     assert maxym_dvolinskyi_find_the_smallest.smallest(261235) == [126235, 2, 0]

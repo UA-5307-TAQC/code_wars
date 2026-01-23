@@ -6,6 +6,7 @@ class Authors:
 
     __authors = (
         "denys_skovoronok",
+        "denys_sidorov",
         "hlib_shramko",
         "kekish",
         "kostiantyn_osypenko",

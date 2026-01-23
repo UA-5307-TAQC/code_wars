@@ -9,7 +9,7 @@ def is_prime(num):
             return False
     return True
 
-def ex18_gap(g, m, n):
+def gap(g, m, n):
     prev = None
     for i in range(m, n + 1):
         if is_prime(i):
@@ -18,14 +18,14 @@ def ex18_gap(g, m, n):
             prev = i
     return None
 
-def ex19_trailing_zeros(n):
+def zeros(n):
     count = 0
     while n > 0:
         n //= 5
         count += n
     return count
 
-def ex20_squares(count):
+def perimeter(count):
     perimeter = 0
     previous_square = 0
     current_square = 1
@@ -36,7 +36,7 @@ def ex20_squares(count):
         current_square = new_square
     return perimeter
 
-def ex21_find_x(m):
+def solve(m):
     b = ((-2) * m) - 1
     discriminant = math.pow(b, 2) - 4 * m * m
     x_1 = (math.sqrt(discriminant) - b) / (2 * m)
@@ -48,7 +48,7 @@ def ex21_find_x(m):
     else:
         return "The desired x does not exist"
 
-def ex22_smallest(number):
+def smallest(number):
     numbers = []
     indexes_took = []
     indexes_insert = []

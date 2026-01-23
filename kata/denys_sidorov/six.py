@@ -1,7 +1,7 @@
 import math
 import numpy as np
 
-def ex12_cubes(m):
+def find_nb(m):
     n = 1
     sum = 0
     while True:
@@ -13,7 +13,7 @@ def ex12_cubes(m):
         n += 1
     return n
 
-def ex13_balance_checking(check_book):
+def balance(check_book):
     string_into_list = check_book.splitlines()
     list_of_lines = [line for line in string_into_list if line]
     balance = 0
@@ -36,10 +36,10 @@ def ex13_balance_checking(check_book):
     result_string = '\n'.join(list_of_lines)
     return result_string
 
-def ex14_floating_point(x):
+def f(x):
     return x / (math.sqrt(1 + x) + 1)
 
-def ex15_rainfall(town, strng):
+def rainfall(town, strng):
     desired_string = ""
     string_into_list = strng.splitlines()
     for i in range(len(string_into_list)):
@@ -53,18 +53,18 @@ def ex15_rainfall(town, strng):
     return np.array(rain)
 
 def mean(town, strng):
-    rain_array = ex15_rainfall(town, strng)
+    rain_array = rainfall(town, strng)
     if isinstance(rain_array, int):
         return -1
     return rain_array.mean()
 
 def variance(town, strng):
-    rain_array = ex15_rainfall(town, strng)
+    rain_array = rainfall(town, strng)
     if isinstance(rain_array, int):
         return -1
     return rain_array.var()
 
-def ex16_nba_cup(strng, desired_team):
+def nba_cup(strng, desired_team):
     team_found = False
     wins = 0
     draws = 0
@@ -105,7 +105,7 @@ def ex16_nba_cup(strng, desired_team):
         return f"{desired_team}" + ":This team didn't play!"
     return f"{desired_team}" + ":W=" + f"{wins}" + ";D=" + f"{draws}" + ";L=" + f"{wins}" + ";Scored=" + f"{points_scored}" + ";Conceded=" + f"{points_conceded}" + ";Points=" + f"{total_points}"
 
-def ex17_bookseller(stocklist, categories):
+def stock_list(stocklist, categories):
     count_categories = [0] * len(categories)
     for i in range(len(categories)):
         for j in range(len(stocklist)):

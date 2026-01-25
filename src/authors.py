@@ -16,6 +16,11 @@ class Authors:
         "vitalinakliuieva",
     )
 
+    @classmethod
+    def get_authors(cls):
+        """Class for choosing an author."""
+        return cls.__authors
+
     @staticmethod
     def display_authors():
         """Display authors."""

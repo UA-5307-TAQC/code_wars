@@ -65,6 +65,8 @@ def variance(town, strng):
     return rain_array.var()
 
 def nba_cup(strng, desired_team):
+    if not desired_team:
+        return ""
     team_found = False
     wins = 0
     draws = 0

@@ -5,14 +5,9 @@ import os
 import pytest
 
 from dynamic_import import import_all_from_folder
+from src.files import Files
 
-# from src import files
-
-# 1. Знаходимо, де фізично лежить цей файл (kata_test.py) на диску
 current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# 2. Склеюємо шлях до поточної папки + "kata"
-# Тепер це буде щось типу "D:/projects/.../code_wars/kata"
 kata_folder_path = os.path.join(current_dir, "kata")
 
 modules = import_all_from_folder(kata_folder_path)
@@ -52,15 +47,9 @@ STOCKLIST_DATA = [
     (["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"], [], ""),
 ]
 
-FILES_DATA = [
-    (1, True),
-    (2, True),
-    (3, True),
-    (4, True),
-    (5, False),
-    (0, False),
-    ("", False),
-]
+FILES_DATA = [("1", True), (2, True), (3, True), (4, True), (5, False), (0, False), ("", False), (r"\w|\d.", False)]
+
+mock_map = {1: {"functions": ["test_func_one", "test_func_two"]}}
 
 
 @pytest.mark.parametrize("student", students)
@@ -82,7 +71,21 @@ def test_stocklist(student, input_stocklist, input_categories, expected_result):
     assert student.stock_list(input_stocklist, input_categories) == expected_result
 
 
-# @pytest.mark.parametrize('file', files)
-# @pytest.mark.parametrize('input_data, expected_result', FILES_DATA)
-# def test_choose_function(file, input_data, expected_result):
-#     assert file.Files.choose_function(input(input_data)) == expected_result
+def test_choose_function(mocker):
+    """Mock test valid inputs for function."""
+    mocker.patch("src.files.EXERCISE_MAP", mock_map)
+    mocker.patch("builtins.input", return_value="1")
+
+    result = Files.choose_function(1)
+
+    assert result == "test_func_one"
+
+
+def test_choose_invalid_then_valid(mocker):
+    """Mock test invalid inputs for function."""
+    mocker.patch("src.files.EXERCISE_MAP", mock_map)
+    mocker.patch("builtins.input", side_effect=["99", "hi", "1"])
+
+    result = Files.choose_function(1)
+
+    assert result == "test_func_one"

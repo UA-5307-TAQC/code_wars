@@ -49,7 +49,7 @@ variance_cases = [
 ]
 
 
-@pytest.mark.parametrize("author, mean_func, variance_func", load_functions())
+@pytest.mark.parametrize("author, mean_func, _", load_functions())
 @pytest.mark.parametrize("town, data, expected", mean_cases)
 def test_mean(author, mean_func, _, town, data, expected):
     """Test mean rainfall."""
@@ -57,7 +57,7 @@ def test_mean(author, mean_func, _, town, data, expected):
     assert result == pytest.approx(expected, rel=1e-2), f"Author {author} failed mean for town {town}"
 
 
-@pytest.mark.parametrize("author, mean_func, variance_func", load_functions())
+@pytest.mark.parametrize("author, _, variance_func", load_functions())
 @pytest.mark.parametrize("town, data, expected", variance_cases)
 def test_variance(author, _, variance_func, town, data, expected):
     """Test variance rainfall."""

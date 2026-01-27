@@ -19,7 +19,7 @@ def get_module_paths(module: ModuleName) -> list[str]:
 
     modules = []
     for package in os.listdir("kata"):
-        if package != "__pycache__":
+        if package not in ("__pycache__", "__init__.py"):
             modules.append(f"kata.{package}.{module}")
     return modules
 

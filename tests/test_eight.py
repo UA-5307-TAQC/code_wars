@@ -2,6 +2,21 @@
 
 import pytest
 
+WILSON_DATA = [
+    (0, False),
+    (1, False),
+    (5, True),
+    (8, False),
+    (9, False),
+]
+
+
+VOLUME_OF_CUBOID = [
+    (1, 2, 2, 4),
+    (6.3, 2, 5, 63),
+    (6.3, 2, 0, 0)
+]
+
 
 @pytest.mark.parametrize(
     "value, expected",
@@ -24,11 +39,13 @@ def test_two_decimal_places(eight_module, value, expected):
     assert result == expected, f"{result} is expected to be {expected}"
 
 
-VOLUME_OF_CUBOID = [
-    (1, 2, 2, 4),
-    (6.3, 2, 5, 63),
-    (6.3, 2, 0, 0)
-]
+@pytest.mark.parametrize("input_data, expected_result", WILSON_DATA)
+def test_willson_prime(eight_module, input_data, expected_result):
+    """Test each students' am_i_wilson function."""
+    if not hasattr(eight_module, "am_i_wilson"):
+        pytest.skip(f"Student {eight_module.__name__} does not have am_i_wilson function.")
+    assert eight_module.am_i_wilson(input_data) == expected_result
+
 
 @pytest.mark.parametrize("input_length, input_width, input_height, expected_result", VOLUME_OF_CUBOID)
 def test_get_volume_of_cuboid(eight_module, input_length, input_width, input_height, expected_result):

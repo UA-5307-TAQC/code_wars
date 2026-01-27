@@ -11,11 +11,7 @@ WILSON_DATA = [
 ]
 
 
-VOLUME_OF_CUBOID = [
-    (1, 2, 2, 4),
-    (6.3, 2, 5, 63),
-    (6.3, 2, 0, 0)
-]
+VOLUME_OF_CUBOID = [(1, 2, 2, 4), (6.3, 2, 5, 63), (6.3, 2, 0, 0)]
 
 
 @pytest.mark.parametrize(
@@ -38,6 +34,7 @@ def test_two_decimal_places(eight_module, value, expected):
     result = eight_module.two_decimal_places(value)
     assert result == expected, f"{result} is expected to be {expected}"
 
+
 @pytest.mark.parametrize(
     "numbers, divisor, expected",
     [
@@ -54,6 +51,7 @@ def test_divisible_by(eight_module, numbers, divisor, expected):
 
     result = eight_module.divisible_by(numbers, divisor)
     assert result == expected, f"{result} is expected to be {expected}"
+
 
 @pytest.mark.parametrize("input_data, expected_result", WILSON_DATA)
 def test_willson_prime(eight_module, input_data, expected_result):

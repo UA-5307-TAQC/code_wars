@@ -37,4 +37,4 @@ def test_run_exercise_module_not_found(mock_get_parameters, mock_import, capsys)
     Runner.run_exercise("someone", 1, "fake_func")
 
     captured = capsys.readouterr()
-    assert "Module do not exist." in captured.out
+    assert "Module does not exist." in captured.out

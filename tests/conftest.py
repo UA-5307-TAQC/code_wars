@@ -6,6 +6,11 @@ from typing import List, Literal, TypeAlias
 
 import pytest
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 ModuleName: TypeAlias = Literal["five", "six", "seven", "eight"]
 
 

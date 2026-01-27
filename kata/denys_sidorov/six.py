@@ -108,6 +108,8 @@ def nba_cup(strng, desired_team):
     return f"{desired_team}" + ":W=" + f"{wins}" + ";D=" + f"{draws}" + ";L=" + f"{wins}" + ";Scored=" + f"{points_scored}" + ";Conceded=" + f"{points_conceded}" + ";Points=" + f"{total_points}"
 
 def stock_list(stocklist, categories):
+    if not stocklist:
+        return ""
     count_categories = [0] * len(categories)
     for i in range(len(categories)):
         for j in range(len(stocklist)):

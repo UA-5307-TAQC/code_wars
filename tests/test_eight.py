@@ -22,3 +22,20 @@ def test_two_decimal_places(eight_module, value, expected):
 
     result = eight_module.two_decimal_places(value)
     assert result == expected, f"{result} is expected to be {expected}"
+
+
+@pytest.mark.parametrize(
+    "mpg, expected",
+    [
+        (10, 3.54),
+        (20, 7.08),
+        (30, 10.62),
+        (0, 0.00),
+        (1, 0.35),
+    ],
+)
+def test_converter(eight_module, mpg, expected):
+    """Miles per gallon to kilometers per liter."""
+
+    result = eight_module.converter(mpg)
+    assert result == expected, f"{result} is expected to be {expected}"

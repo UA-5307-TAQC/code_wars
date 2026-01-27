@@ -19,6 +19,7 @@ Beijing:Jan 3.9,Feb 4.7,Mar 8.2,Apr 18.4,May 33.0,Jun 78.1,Jul 224.3,Aug 170.0,S
 )
 def test_mean(six_module, town, data, expected):
     """Run tests for mean"""
+
     result = six_module.mean(town, data)
     assert result == expected, f"{result} is expected to be {expected}"
 
@@ -32,5 +33,6 @@ def test_mean(six_module, town, data, expected):
 )
 def test_variance(six_module, town, data, expected):
     """Run tests for variance"""
+
     result = six_module.variance(town, data)
     assert result == pytest.approx(result, rel=1e-2), f"{result} is expected to be {expected}"

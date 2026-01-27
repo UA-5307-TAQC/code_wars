@@ -38,5 +38,6 @@ def test_two_decimal_places(eight_module, value, expected):
 )
 def test_count_positives_sum_negatives(eight_module, arr, expected):
     """Run tests for count_positives_sum_negatives."""
+
     result = eight_module.count_positives_sum_negatives(arr)
     assert result == expected, f"{result} is expected to be {expected}"

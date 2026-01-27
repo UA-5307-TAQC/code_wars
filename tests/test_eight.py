@@ -1,4 +1,4 @@
-"""Formatting decimal places tests."""
+"""Tests for solutions of eight kyu module."""
 
 import pytest
 
@@ -22,3 +22,18 @@ def test_two_decimal_places(eight_module, value, expected):
 
     result = eight_module.two_decimal_places(value)
     assert result == expected, f"{result} is expected to be {expected}"
+
+
+@pytest.mark.parametrize(
+    "arr, expected",
+    [
+        ([4, 3, 9, 7, 2, 1], [2, 9, 3, 49, 4, 1]),
+        ([100, 101, 5, 5, 1, 1], [10, 10201, 25, 25, 1, 1]),
+        ([1, 2, 3, 4, 5, 6], [1, 4, 9, 2, 25, 36]),
+        ([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], [1.0, 4.0, 9.0, 2.0, 25.0, 36.0]),
+    ],
+)
+def test_square_or_square_root(eight_module, arr, expected):
+    """Tests for square_or_square_root function of all authors."""
+    square_result = eight_module.square_or_square_root(arr)
+    assert square_result == expected, f"{square_result} is expected to be {expected}"

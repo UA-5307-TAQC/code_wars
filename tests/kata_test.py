@@ -9,7 +9,7 @@ from src.files import Files
 from .dynamic_import import import_all_from_folder
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-kata_folder_path = os.path.join(current_dir, "..kata")
+kata_folder_path = os.path.join(current_dir, "..", "kata")
 
 modules = import_all_from_folder(kata_folder_path)
 students = list(modules.values())

@@ -4,11 +4,12 @@ import os
 
 import pytest
 
-from dynamic_import import import_all_from_folder
 from src.files import Files
 
+from .dynamic_import import import_all_from_folder
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
-kata_folder_path = os.path.join(current_dir, "kata")
+kata_folder_path = os.path.join(current_dir, "..kata")
 
 modules = import_all_from_folder(kata_folder_path)
 students = list(modules.values())
@@ -46,8 +47,6 @@ STOCKLIST_DATA = [
     ([], ["A", "B", "Q", "W"], ""),
     (["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"], [], ""),
 ]
-
-FILES_DATA = [("1", True), (2, True), (3, True), (4, True), (5, False), (0, False), ("", False), (r"\w|\d.", False)]
 
 mock_map = {1: {"functions": ["test_func_one", "test_func_two"]}}
 

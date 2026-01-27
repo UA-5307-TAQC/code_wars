@@ -6,13 +6,13 @@ import os
 import pytest
 
 
-def get_module_paths():
+def get_module_paths(module: str = "five"):
     """Create a list with module paths."""
 
     modules = []
     for package in os.listdir("kata"):
         if package != "__pycache__":
-            modules.append(f"kata.{package}.five")
+            modules.append(f"kata.{package}.{module}")
     return modules
 
 

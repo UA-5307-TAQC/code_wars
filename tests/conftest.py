@@ -6,10 +6,10 @@ from typing import List, Literal, TypeAlias
 
 import pytest
 
-import sys
-from pathlib import Path
+# from pathlib import Path
+# import  sys
+# sys.path.insert(0, str(Path(__file__).parent.parent))
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
 
 ModuleName: TypeAlias = Literal["five", "six", "seven", "eight"]
 
@@ -42,3 +42,4 @@ def _create_module_fixture(module_name: ModuleName):
 module_names: List[ModuleName] = ["five", "six", "seven", "eight"]
 for mod_name in module_names:
     globals()[f"fixture_import_{mod_name}"] = _create_module_fixture(mod_name)
+

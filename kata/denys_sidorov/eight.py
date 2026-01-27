@@ -18,7 +18,7 @@ def converter(mpg):
     kpl_rounded = round(kpl, 2)
     return kpl_rounded
 
-def square_of_square_root(numbers):
+def square_or_square_root(numbers):
     processed_numbers = []
     for num in numbers:
         sqrt_num = math.sqrt(num)

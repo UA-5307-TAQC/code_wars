@@ -22,3 +22,20 @@ def test_two_decimal_places(eight_module, value, expected):
 
     result = eight_module.two_decimal_places(value)
     assert result == expected, f"{result} is expected to be {expected}"
+
+
+@pytest.mark.parametrize(
+    "arr, expected",
+    [
+        ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], [10, -65]),
+        ([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14], [8, -50]),
+        ([1], [1, 0]),
+        ([-1], [0, -1]),
+        ([0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0]),
+        ([], []),
+    ],
+)
+def test_count_positives_sum_negatives(eight_module, arr, expected):
+    """Run tests for count_positives_sum_negatives."""
+    result = eight_module.count_positives_sum_negatives(arr)
+    assert result == expected, f"{result} is expected to be {expected}"

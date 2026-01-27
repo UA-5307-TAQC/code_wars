@@ -23,4 +23,4 @@ class Runner:  # pylint: disable=too-few-public-methods
             if result is not None:
                 print("Result:", result)
         except ModuleNotFoundError:
-            print("Module do not exist.")
+            print("Module does not exist.")

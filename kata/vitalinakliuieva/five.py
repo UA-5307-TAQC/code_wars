@@ -49,7 +49,7 @@ def smallest(n):
     num = str(n)
     best = (n,0,0)
 
-    for i,_ in range(len(num)):
+    for i  in range(len(num)):
         digit = num[i]
         rest = num[:i] + num[i + 1:]
 

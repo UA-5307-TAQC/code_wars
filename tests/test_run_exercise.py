@@ -32,8 +32,6 @@ def test_run_exercise_module_not_found(mock_get_parameters, mock_import, capsys)
 
     mock_import.side_effect = ModuleNotFoundError
 
-    mock_get_parameters.return_value = [2, 5, 7]
-
     Runner.run_exercise("someone", 1, "fake_func")
 
     captured = capsys.readouterr()

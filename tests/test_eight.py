@@ -34,7 +34,7 @@ WILSON_DATA = [
 
 
 @pytest.mark.parametrize("input_data, expected_result", WILSON_DATA)
-def test_willson_prime(eight_module, input_data, expected_result):
+def test_wilson_prime(eight_module, input_data, expected_result):
     """Test each students' am_i_wilson function."""
     if not hasattr(eight_module, "am_i_wilson"):
         pytest.skip(f"Student {eight_module.__name__} does not have am_i_wilson function.")

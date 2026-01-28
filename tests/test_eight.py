@@ -4,6 +4,23 @@ import pytest
 
 
 @pytest.mark.parametrize(
+    "num, expected",
+    [
+        (0, 0),
+        (1, 0),
+        (2, 1),
+        (3, 1),
+        (4, 2),
+        (10, 5),
+    ],
+)
+def test_liters(eight_module, num: int, expected: int):
+    """Test function."""
+    result = eight_module.litres(num)
+    assert result == expected, f"{num} is expected to be {expected}, not {result}"
+
+
+@pytest.mark.parametrize(
     "value, expected",
     [
         (1.231, 1.23),

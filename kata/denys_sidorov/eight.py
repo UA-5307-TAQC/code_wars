@@ -46,14 +46,14 @@ def converter(mpg: float) -> float:
 
 def square_or_square_root(numbers):
     """
-       Process numbers by either taking the square root or squaring the number.
+    Process numbers by either taking the square root or squaring the number.
 
-       If the square root of a number is an integer, it is added to the result.
-       Otherwise, the square of the number is added.
+    If the square root of a number is an integer, it is added to the result.
+    Otherwise, the square of the number is added.
 
-       :param numbers: List of integers.
-       :return: Processed list of integers.
-       """
+    :param numbers: List of integers.
+    :return: Processed list of integers.
+    """
     processed_numbers = []
 
     for number in numbers:

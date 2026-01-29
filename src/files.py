@@ -1,5 +1,7 @@
 """Files module."""
 
+from ast import literal_eval
+
 from src.constants import EXERCISE_MAP, FUNCTION_PARAMS
 
 
@@ -8,18 +10,21 @@ class Files:
 
     @staticmethod
     def get_parameters(func_name):
-        """Get parameters."""
+        """Get parameters"""
         params = FUNCTION_PARAMS.get(func_name, [])
         values = []
         for name, param_type in params:
             while True:
                 try:
                     raw = input(f"Enter {name} ({param_type.__name__}): ")
-                    value = param_type(raw)
+                    if param_type is list:
+                        value = literal_eval(raw)
+                    else:
+                        value = param_type(raw)
                     values.append(value)
                     break
                 except ValueError:
-                    print(f"Invalid {name}. Expected {param_type.__name__}.")
+                    print(f"Invalid {name}. Expected {param_type.__name__}")
         return values
 
     @staticmethod

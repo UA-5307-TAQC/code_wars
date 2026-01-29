@@ -18,7 +18,7 @@ import pytest
         (10**7, "6.42"),
     ],
 )
-def test_series_num(seven_module, num: int, expected: int):
+def test_series_num(seven_module, num: int, expected: str):
     """Test function."""
     result = seven_module.series_sum(num)
     assert result == expected, f"{num} is expected to be {expected}, not {result}"

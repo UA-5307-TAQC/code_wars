@@ -82,7 +82,7 @@ def variance(town, s):
     return sum((month_rainfall - avg) ** 2 for month_rainfall in rainfall_data) / len(rainfall_data)
 
 
-def nba_cup(result_sheet: str, to_find: str):
+def nba_cup(result_sheet: str, to_find: str):  # pylint: disable=too-many-locals
     """Rank NBA teams solution."""
     if not to_find:
         return ""
@@ -96,9 +96,10 @@ def nba_cup(result_sheet: str, to_find: str):
     found = False
 
     records = result_sheet.split(",")
-    pattern = re.compile(r"^(.*?) (\d+\.?\d*) (.*?) (\d+\.?\d*)$")
+    pattern = re.compile(r"^(.*?)\s+(\d+\.?\d*)\s+(.*?)\s+(\d+\.?\d*)$")
 
     for record in records:
+        record = record.strip()
         match = pattern.match(record)
         if match:
             team_1, score_1, team_2, score_2 = match.groups()

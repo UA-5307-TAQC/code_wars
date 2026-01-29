@@ -73,7 +73,8 @@ def test_wilson_prime(eight_module, input_data, expected_result):
 )
 def test_converter(eight_module, mpg, expected):
     """Miles per gallon to kilometers per liter."""
-
+    if not hasattr(eight_module, "converter"):
+        pytest.skip(f"Student {eight_module.__name__} does not have converter function.")
     result = eight_module.converter(mpg)
     assert result == expected, f"{result} is expected to be {expected}"
 

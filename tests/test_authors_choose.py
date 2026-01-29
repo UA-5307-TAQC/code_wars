@@ -28,10 +28,9 @@ def test_choose_author_positive(monkeypatch, value, expected):
 @pytest.mark.parametrize(
     "value, expected",
     [
-        ("0", "Invalid choice. minimum is 1, maximum is 9"),
-        ("-1", "Invalid choice. minimum is 1, maximum is 9"),
-        ("10", "Invalid choice. minimum is 1, maximum is 9"),
-        ("11", "Invalid choice. minimum is 1, maximum is 9"),
+        ("0", "Invalid choice. minimum is 1, maximum is 10"),
+        ("-1", "Invalid choice. minimum is 1, maximum is 10"),
+        ("11", "Invalid choice. minimum is 1, maximum is 10"),
         ("abc", "Please enter a valid number."),
         ("$", "Please enter a valid number."),
         ("1.0", "Please enter a valid number."),

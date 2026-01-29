@@ -41,3 +41,28 @@ ensure_newline_before_comments = true
 [tool.pre-commit]
 # Pin the pre-commit version used in CI and local installs. Also listed in requirements.txt.
 version = "4.5.1"
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--cov=. --cov-report=html"
+
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "tests/*",
+    "src/__init__.py",
+    "kata/__init__.py",
+    "kata/*/__init__.py",
+    "main.py",
+]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+]

@@ -17,6 +17,7 @@ from src.authors import Authors
         ("7", "tliubov"),
         ("8", "valentyn_yehoian"),
         ("9", "vitalinakliuieva"),
+        ("10", "anzhela_maliarevych"),
     ],
 )
 def test_choose_author_positive(monkeypatch, value, expected):

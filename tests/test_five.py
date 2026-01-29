@@ -67,3 +67,21 @@ def test_number_of_trailing_zeros_of_n(five_module, value, expected):
 
     result = five_module.zeros(value)
     assert result == expected, f" {value} is expected to be {expected}"
+
+
+@pytest.mark.parametrize(
+    "value, expected",
+    [
+        (0, 4),
+        (5, 80),
+        (7, 216),
+        (20, 114624),
+        (30, 14098308),
+        (100, 6002082144827584333104),
+    ],
+)
+def test_perimeter(five_module, value, expected):
+    """Perimeter of squares in a rectangle."""
+
+    result = five_module.perimeter(value)
+    assert result == expected, f" {value} is expected to be {expected}"

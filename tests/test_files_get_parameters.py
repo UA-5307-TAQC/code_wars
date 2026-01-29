@@ -13,7 +13,7 @@ from src.files import Files
     [("litres", ["5"], [5]), ("two_decimal_places", ["3.14"], ["3.14"]), ("new_avg", ["1", "5"], [1, 5])],
 )
 def test_get_parameters(func_name, inputs, expected):
-    """Run tests fot get_parameters"""
+    """Run tests for get_parameters"""
 
     with patch("builtins.input", side_effect=inputs):
         result = Files.get_parameters(func_name)

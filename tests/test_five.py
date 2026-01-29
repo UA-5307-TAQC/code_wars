@@ -2,11 +2,8 @@
 
 import pytest
 
-FIND_THE_SMALLEST = [
-    (261235, [126235, 2, 0]),
-    (209917, [29917, 0, 1]),
-    (285365, [238565, 3, 1])
-]
+FIND_THE_SMALLEST = [(261235, [126235, 2, 0]), (209917, [29917, 0, 1]), (285365, [238565, 3, 1])]
+
 
 @pytest.mark.parametrize(
     "gap, start, end, expected",
@@ -32,6 +29,7 @@ def test_smallest(five_module, input_n, expected_result):
     if not hasattr(five_module, "smallest"):
         pytest.skip(f"Student {five_module.__name__} does not have smallest function.")
     assert five_module.smallest(input_n) == expected_result
+
 
 @pytest.mark.parametrize(
     "value, expected",

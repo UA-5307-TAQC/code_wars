@@ -10,7 +10,6 @@ WILSON_DATA = [
     (9, False),
 ]
 
-
 VOLUME_OF_CUBOID = [(1, 2, 2, 4), (6.3, 2, 5, 63), (6.3, 2, 0, 0)]
 
 
@@ -92,3 +91,11 @@ def test_square_or_square_root(eight_module, arr, expected):
     """Tests for square_or_square_root function of all authors."""
     square_result = eight_module.square_or_square_root(arr)
     assert square_result == expected, f"{square_result} is expected to be {expected}"
+
+
+@pytest.mark.parametrize("input_length, input_width, input_height, expected_result", VOLUME_OF_CUBOID)
+def test_get_volume_of_cuboid(eight_module, input_length, input_width, input_height, expected_result):
+    """Test each students' get_volume_of_cuboid function."""
+    if not hasattr(eight_module, "get_volume_of_cuboid"):
+        pytest.skip(f"Student {eight_module.__name__} does not have get_volume_of_cuboid function.")
+    assert eight_module.get_volume_of_cuboid(input_length, input_width, input_height) == expected_result

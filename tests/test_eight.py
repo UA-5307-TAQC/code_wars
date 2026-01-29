@@ -116,3 +116,22 @@ def test_get_volume_of_cuboid(eight_module, input_length, input_width, input_hei
     if not hasattr(eight_module, "get_volume_of_cuboid"):
         pytest.skip(f"Student {eight_module.__name__} does not have get_volume_of_cuboid function.")
     assert eight_module.get_volume_of_cuboid(input_length, input_width, input_height) == expected_result
+
+
+# Count_positives_sum_negatives
+@pytest.mark.parametrize(
+    "arr, expected",
+    [
+        ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], [10, -65]),
+        ([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14], [8, -50]),
+        ([1], [1, 0]),
+        ([-1], [0, -1]),
+        ([0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0]),
+        ([], []),
+    ],
+)
+def test_count_positives_sum_negatives(eight_module, arr, expected):
+    """Run tests for count_positives_sum_negatives."""
+
+    result = eight_module.count_positives_sum_negatives(arr)
+    assert result == expected, f"{result} is expected to be {expected}"

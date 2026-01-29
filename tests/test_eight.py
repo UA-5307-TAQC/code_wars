@@ -59,3 +59,20 @@ def test_wilson_prime(eight_module, input_data, expected_result):
     if not hasattr(eight_module, "am_i_wilson"):
         pytest.skip(f"Student {eight_module.__name__} does not have am_i_wilson function.")
     assert eight_module.am_i_wilson(input_data) == expected_result
+
+
+@pytest.mark.parametrize(
+    "mpg, expected",
+    [
+        (10, 3.54),
+        (20, 7.08),
+        (30, 10.62),
+        (0, 0.00),
+        (1, 0.35),
+    ],
+)
+def test_converter(eight_module, mpg, expected):
+    """Miles per gallon to kilometers per liter."""
+
+    result = eight_module.converter(mpg)
+    assert result == expected, f"{result} is expected to be {expected}"

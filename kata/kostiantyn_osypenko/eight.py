@@ -3,7 +3,7 @@
 import math
 
 
-def keep_hydrated(time):
+def litres(time):
     """Keep Hydrated! solution."""
     return int(time * 0.5)
 

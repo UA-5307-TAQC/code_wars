@@ -58,6 +58,20 @@ Notes:
 - `pre-commit` is pinned in `requirements.txt` to ensure CI and local runs use the same version.
 - Config files: `.flake8`, `.pylintrc`, and `pyproject.toml` are used by the configured hooks.
 
+## Tests and coverage
+
+Run tests with coverage (replace `code_warr` with the package/module name if different):
+
+```bash
+pytest
+```
+
+Windows PowerShell example to open the report:
+
+```powershell
+Start-Process .\htmlcov\index.html
+```
+
 ## Usage
 To run the application, use the following command:
 ```bash

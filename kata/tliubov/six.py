@@ -95,6 +95,12 @@ def variance(town, s):
     return deviation_sum / 12
 
 
+def rainfall(town,s):
+    """Rainfall - find variance and mean of rainfall."""
+
+    return [mean(town, s), variance(town, s)]
+
+
 def nba_cup(result_sheet, to_find):
     """Rank NBA teams."""
 

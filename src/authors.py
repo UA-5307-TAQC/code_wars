@@ -14,6 +14,7 @@ class Authors:
         "tliubov",
         "valentyn_yehoian",
         "vitalinakliuieva",
+        "anzhela_maliarevych",
     )
 
     @staticmethod

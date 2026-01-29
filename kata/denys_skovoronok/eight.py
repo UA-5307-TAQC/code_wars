@@ -13,6 +13,11 @@ def get_volume_of_cuboid(length, width, height):
     return length * width * height
 
 
+def converter(mpg):
+    """Miles per gallon to kilometers per liter."""
+    return round(mpg / 4.54609188 * 1.609344, 2)
+
+
 def square_or_square_root(arr):
     """To square root or no to square."""
     result = [m.sqrt(i) if m.sqrt(i).is_integer() else i**2 for i in arr]

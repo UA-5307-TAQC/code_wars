@@ -28,7 +28,6 @@ STOCKLIST_DATA = [
     (["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"], [], ""),
 ]
 
-
 RAINFALL_DATA = """Rome:Jan 81.2,Feb 63.2,Mar 70.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,\
 Sep 60.9,Oct 117.7,Nov 111.0,Dec 97.9
 London:Jan 48.0,Feb 38.9,Mar 39.9,Apr 42.2,May 47.3,Jun 52.1,Jul 59.5,Aug 57.2,Sep 55.4,Oct 62.0,Nov 59.0,Dec 52.9
@@ -41,12 +40,12 @@ Beijing:Jan 3.9,Feb 4.7,Mar 8.2,Apr 18.4,May 33.0,Jun 78.1,Jul 224.3,Aug 170.0,S
     [
         (
             """1000.00
-125 Market 125.45
-126 Hardware 34.95
-127 Video 7.45
-128 Book 14.32
-129 Gasoline 16.10
-""",
+    125 Market 125.45
+    126 Hardware 34.95
+    127 Video 7.45
+    128 Book 14.32
+    129 Gasoline 16.10
+    """,
             "Original Balance: 1000.00\r\n"
             "125 Market 125.45 Balance 874.55\r\n"
             "126 Hardware 34.95 Balance 839.60\r\n"
@@ -137,4 +136,4 @@ def test_variance(six_module, town, data, expected):
     """Run tests for variance"""
 
     result = six_module.variance(town, data)
-    assert result == pytest.approx(result, rel=1e-2), f"{result} is expected to be {expected}"
+    assert result == pytest.approx(expected, rel=1e-2), f"{result} is expected to be {expected}"

@@ -1,12 +1,13 @@
 """Integration tests for square_or_root_square and f functions in console app."""
 
+import ast
 import re
 
 import pytest
 
 from main import main
 
-AUTHOR_INDEX = ("1", "2", "3", "4", "5", "6", "7", "8", "9")
+AUTHOR_INDEX = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
 
 
 @pytest.mark.parametrize("author_index", AUTHOR_INDEX)
@@ -28,7 +29,16 @@ def test_square_integration(monkeypatch, capsys, author_index, arr, expected):
         main()
 
     captured: str = capsys.readouterr().out
-    assert str(expected) in captured
+    match = re.search(r"Result: (\[.*?\])", captured)
+    assert match is not None, f"Result is not found. {captured}"
+
+    list_str = match.group(1)
+    try:
+        actual_list = ast.literal_eval(list_str)
+    except ValueError:
+        pytest.fail(f"Could not parse list from string: {list_str}")
+
+    assert actual_list == expected, f"Result is incorrect. Expected {expected}, but got {actual_list}"
 
 
 @pytest.mark.parametrize("author_index", AUTHOR_INDEX)
@@ -57,7 +67,9 @@ def test_f_integration(monkeypatch, capsys, author_index, x, expected):
 
     captured: str = capsys.readouterr().out
     match = re.search(r"Result: ([\d\.eE\-\+]+)", captured)
-    assert match is not None
+    assert match is not None, f"Result is not found. {captured}"
 
     result_str = match.group(1)
-    assert float(result_str) == pytest.approx(expected, rel=1e-12)
+    assert float(result_str) == pytest.approx(
+        expected, rel=1e-12
+    ), f"Result is incorrect. Expected {expected}, but got {result_str}"

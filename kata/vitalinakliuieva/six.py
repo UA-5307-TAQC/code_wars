@@ -53,9 +53,7 @@ def f(x):
 
 def rainfall(town,s):
     """Rainfall exercise"""
-    mean = town.mean(town,s)
-    variance = town.variance(town,s)
-    return [mean,variance]
+    return [mean(town,s),variance(town,s)]
 
 
 def mean(town,s):

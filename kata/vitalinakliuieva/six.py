@@ -58,7 +58,7 @@ def rainfall(town,s):
 
 def mean(town,s):
     """Rainfall exercise"""
-    values = town.get_values(town,s)
+    values = get_values(town,s)
     if values is None:
         return -1
     return sum(values) / len(values)
@@ -66,7 +66,7 @@ def mean(town,s):
 
 def variance(town,s):
     """Rainfall exercise"""
-    values = town.get_values(town,s)
+    values = get_values(town,s)
     if values is None:
         return -1
 

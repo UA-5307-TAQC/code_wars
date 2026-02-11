@@ -28,9 +28,9 @@ def balance(book):
     result = [f"Original Balance: {new_balance:.2f}"]
 
     for line in lines_arr[1:]:
-        line_data = line.split(" ")
+        line_data = line.split()
 
-        if line_data == [""]:
+        if line_data == [""] or not line_data:
             continue
 
         check = int(re.findall(num_pattern, line_data[0])[0])
@@ -104,9 +104,10 @@ def nba_cup(result_sheet, to_find):
     if not re.search(rf"{to_find}\s", result_sheet):
         return f"{to_find}:This team didn't play!"
 
-    arr = result_sheet.split(",")
     try:
-        serialized_team_matches = [serialize_match_data(match_str) for match_str in arr if to_find in match_str]
+        serialized_team_matches = [
+            serialize_match_data(match_str) for match_str in result_sheet.split(",") if to_find in match_str
+        ]
     except ValueError as e:
         return str(e)
 
@@ -143,7 +144,7 @@ def stock_list(stocklist, categories):
     return_arr = [[category, 0] for category in categories]
 
     for category in return_arr:
-        arr_of_current_category_stock = list(filter(lambda parsed_data: parsed_data[0] == category[0], parsed_arr))
-        return_arr[return_arr.index(category)][1] = sum([int(x[1]) for x in arr_of_current_category_stock])
+        arr_of_current_category_stock = [parsed_data for parsed_data in parsed_arr if parsed_data[0] == category[0]]
+        return_arr[return_arr.index(category)][1] = sum(int(x[1]) for x in arr_of_current_category_stock)
 
     return " - ".join([f"({v1} : {v2})" for [v1, v2] in return_arr])
